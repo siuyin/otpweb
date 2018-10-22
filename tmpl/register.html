@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"  href="/static/css/pure-min.css" >
+  <link rel="stylesheet"  href="/static/css/app.css" >
+  <title>OTPWeb {{ .Stage }}</title>
+
+</head>
+
+<body>
+<nav>
+  <a href="/">Home</a>
+</nav>
+<h1>Registration {{.Stage}}</h1>
+<p>Unsafe! Do not implement in production.
+For illustration only.
+<p>The check for existing user option allows
+anyone to overwrite the password associated with any email.
+<form class="pure-form">
+    <label for="Check for exisitng user">
+            <input id="existing-chk" type="checkbox" checked> Check for exisitng user (uncheck to reset / overwrite password).
+    </label>
+
+    <fieldset>
+        <legend>New user</legend>
+
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="pass1" placeholder="Password">
+        <input type="password" id="pass2" placeholder="Password again">
+
+        <button type="button" id="reg-btn" class="pure-button pure-button-primary">Register</button>
+    </fieldset>
+</form>
+<div id="msg"></div>
+<div id="qr-code"></div>
+
+
+<form id="otp-form" action="/otp" method="get" class="pure-form">
+	<p>Click on the button below to get QRCode for Google Authenticator:
+	<p>
+	<input type="hidden" id="email-1" name="email">
+	<input type="hidden" id="pass-1">
+	<button type="submit" class="pure-button" id="qrcode-btn">Get QRCode</button>
+</form>
+
+<script src="/static/js/reg.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+body {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.error {
+  color: red;
+}

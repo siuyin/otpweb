@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"  href="/static/css/pure-min.css" >
+  <link rel="stylesheet"  href="/static/css/app.css" >
+  <title>OTPWeb {{ .Stage }}</title>
+
+</head>
+
+<body>
+<nav>
+  <a href="/">Home</a>
+</nav>
+
+<h1>OTPWeb {{.Stage}}</h1>
+<form class="pure-form">
+    <fieldset>
+        <legend>Sign In</legend>
+
+        <input type="email" id="email" placeholder="Email">
+        <input type="text" id="otp" placeholder="OTP (no spaces)">
+
+        <button type="button" id="si-btn" class="pure-button pure-button-primary">Sign in</button>
+
+	<p>
+        <a href="/register">Register</a> new account / Reset forgotten password.
+    </fieldset>
+</form>
+<p><div id="msg"></div>
+
+<script src="/static/js/app.js"></script>
+</body>
+
+</html>
